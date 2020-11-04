@@ -1,16 +1,10 @@
-const userArgs = process.argv.slice(2);
-for (const arg of userArgs) {
-  if (arg > 0 && Number(arg) !== NaN) {
+const input = process.argv.slice(2);
+
+for (let interval of input) {
+  if (interval > 0 && Number.isInteger(Math.floor(interval))) {
     setTimeout(() => {
       process.stdout.write('\x07');
-    }, arg*1000)
+    }, interval * 100);
   }
-};
-
-
-
-
-
-
-
+}
 
